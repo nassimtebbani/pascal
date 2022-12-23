@@ -1,0 +1,31 @@
+ALGORITHM Checkpoint_Algorithms_and_its_elements
+VAR
+sentence : char[];
+i : INTEGER := 0;
+cpt : INTEGER := 0;
+cpt_s : INTEGER := 0;
+cpt_v : INTEGER := 0;
+  
+BEGIN
+ Read(sentence);
+ WHILE (sentence[i]<>'.') DO
+   cpt := cpt +1;
+    
+    IF (sentence[i]=='a' OR sentence[i]=='e' OR sentence[i]=='i' OR sentence[i]=='u' OR sentence[i]=='o' OR sentence[i]=='y') THEN
+        cpt_v := cpt_v +1;
+    END_IF
+    IF (sentence[i]=='' AND sentence[i+1]<> '.') THEN
+        cpt_s := cpt_s +1;
+    END_IF
+
+    cpt := cpt+1;
+      
+   i := i +1;
+
+ END_WHILE
+
+    Write("The length of the sentence is", cpt);
+    Write("The number of words in the sentence is", cpt_s);
+    Write("The number of vowels in the sentence is", cpt_v);
+
+END
